@@ -16,7 +16,7 @@ Scoopit is a Chrome extension that helps import Garage61 setups from laps pages 
 2. Enable **Developer mode**
 3. Click **Load unpacked**
 4. Select this folder:
-   - `C:\Users\vbern\Documents\New project 4`
+   - `Scoopit`
 
 ## Package for Sharing
 
@@ -24,7 +24,7 @@ Scoopit is a Chrome extension that helps import Garage61 setups from laps pages 
 2. Enable **Developer mode**
 3. Click **Pack extension**
 4. Choose extension root:
-   - `C:\Users\vbern\Documents\New project 4`
+   - `Scoopit`
 5. Click **Pack Extension**
 
 Chrome will generate:
