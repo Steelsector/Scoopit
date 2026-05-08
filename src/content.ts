@@ -1,3 +1,4 @@
+declare const chrome: any;
 
 const DEFAULT_BLOCKLIST = [
   "baseline",
