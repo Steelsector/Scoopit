@@ -16,7 +16,16 @@ Scoopit is a Chrome extension that helps import Garage61 setups from laps pages 
 2. Enable **Developer mode**
 3. Click **Load unpacked**
 4. Select this folder:
-   - `Scoopit`
+   - `.\`
+
+## Install Packaged Release (.crx)
+
+1. Download the release file:
+   - `releases/scoopit-v0.1.0.crx` (from GitHub Releases)
+2. Open `chrome://extensions`
+3. Enable **Developer mode**
+4. Drag and drop the `.crx` file into the extensions page
+5. Confirm install when Chrome prompts
 
 ## Package for Sharing
 
@@ -24,7 +33,7 @@ Scoopit is a Chrome extension that helps import Garage61 setups from laps pages 
 2. Enable **Developer mode**
 3. Click **Pack extension**
 4. Choose extension root:
-   - `Scoopit`
+   - `.\`
 5. Click **Pack Extension**
 
 Chrome will generate:
@@ -46,4 +55,3 @@ This tool is provided for **educational purposes only**.
 - **Non-commercial use only**
 - Do not sell, resell, or bundle this tool for paid/commercial distribution
 - Users are responsible for complying with Garage61 terms and applicable content rights
-
