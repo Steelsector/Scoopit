@@ -1,4 +1,7 @@
 /issues
 ISSUES-*.md
 PRD-*.md
-.idea
+.idea*.pem
+*.crx
+!releases/*.crx
+.idea/
