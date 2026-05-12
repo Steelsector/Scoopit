@@ -1,3 +1,4 @@
+declare const chrome: any;
 
 const DEFAULTS = {
   dryRun: true,
@@ -76,6 +77,35 @@ async function getActiveTab() {
   return tab;
 }
 
+async function startImportWithFallback(tabId: number) {
+  try {
+    return await chrome.tabs.sendMessage(tabId, { type: "G61_START_IMPORT" });
+  } catch (err) {
+    const text = String(err || "");
+    if (!text.includes("Could not establish connection")) {
+      throw err;
+    }
+    const candidates = ["content.js", "src/content.js"];
+    let injected = false;
+    for (const file of candidates) {
+      try {
+        await chrome.scripting.executeScript({
+          target: { tabId },
+          files: [file]
+        });
+        injected = true;
+        break;
+      } catch {
+        // try next candidate
+      }
+    }
+    if (!injected) {
+      throw new Error("Could not inject content script from known paths.");
+    }
+    return await chrome.tabs.sendMessage(tabId, { type: "G61_START_IMPORT" });
+  }
+}
+
 saveBtn.addEventListener("click", async () => {
   try {
     const settings = readSettingsFromForm();
@@ -97,7 +127,7 @@ startBtn.addEventListener("click", async () => {
       return;
     }
 
-    const response = await chrome.tabs.sendMessage(tab.id, { type: "G61_START_IMPORT" });
+    const response = await startImportWithFallback(tab.id);
     if (response?.ok) {
       statusEl.textContent = response.message || "Import started.";
     } else {

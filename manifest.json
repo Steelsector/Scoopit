@@ -3,7 +3,7 @@
   "name": "Scoopit",
   "version": "0.1.0",
   "description": "Import Garage61 lap setups into your setups folder with smart filtering, duplicate handling, and manual start control.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "scripting"],
   "host_permissions": ["https://garage61.net/*"],
   "content_scripts": [
     {

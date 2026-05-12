@@ -1,3 +1,4 @@
+declare const chrome: any;
 
 import { DEFAULT_OPTIONS, loadOptions, saveOptions } from "./core.js";
 

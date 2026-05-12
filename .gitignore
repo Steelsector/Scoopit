@@ -1,7 +1,8 @@
 /issues
 ISSUES-*.md
 PRD-*.md
-.idea*.pem
+*.pem
 *.crx
 !releases/*.crx
 .idea/
+node_modules/
